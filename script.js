@@ -2,34 +2,17 @@ const search = document.querySelector('.search')
 const li = document.querySelectorAll('li')
 
 
-const searchEngine = (e) => {
-
+const filterList = () => {
     li.forEach(el => {
-        const text = e.target.value.toLowerCase()
-        const contentLi = el.textContent.toLowerCase()
-
-
-        if (contentLi.indexOf(text) !== -1) {
-            el.style.display= 'block'
-        } else {
+        const match = new RegExp(search.value, 'i').test(el.textContent) //flaga i mowi ze ingorujemy wielkosc znaków
+        
+        if (!match) {
             el.style.display= 'none'
+        } else {
+            el.style.display= 'block'
         }
     })
 }
 
+search.addEventListener('keyup', filterList)
 
-// Alternative solution:
-
-// const searchEngine2 = () => {
-//     const text = search.value.toLowerCase()
-
-//     for (let el of li) {
-//         const contentLi = el.textContent.toLowerCase()
-//         if (contentLi.indexOf(text) !== -1) {
-//             el.style.display= 'block'
-//         } else el.style.display= 'none'
-//         }
-// }
-
-
-search.addEventListener('keyup', searchEngine)
