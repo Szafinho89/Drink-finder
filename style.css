@@ -58,7 +58,6 @@ h1 {
     width: 100%;
     font-size: 16px;
     border-radius: 5px;
-    nadajemy kolor inputowi i przezroczystosc
     background-color: rgba(255, 255, 255,.85);
 }
 
@@ -82,8 +81,4 @@ li {
 }
 li:last-child {
     border-bottom: 0;
-}
-
-.hide {
-    display: none
 }
