@@ -6,16 +6,11 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    /* żeby działały justify i allign to musi byc najpierw display: flex */
     display: flex;
-    /* wysrodkowane w osi x */
     justify-content: center;
-    /* wysrodkowane po osi Y */
     align-items: center;
 
-    /* minimalna wysokosc 100% viewport height   */
     min-height: 100vh;
-    /* delikatnie szary odcień */
     background-color: rgb(233, 233, 233);
 
 }
@@ -23,7 +18,6 @@ body {
 .wrapper {
     width: 800px;
     background-color: #fff;
-    /* rzucamy czarny cień pod naszym wrapperem na szerokosc rozmycia 10px */
     box-shadow: 0 0 10px #000;
 }
 
@@ -32,28 +26,22 @@ body {
     justify-content: flex-end;
     align-items: flex-start;
     flex-direction: column;
-    /* jako ze to bedzie hero grafika to bedziemy mieli cien wiec on bedzie pozycjonowany absolutnie wzgl naszego rodzica, bo zwroc uwage ze mamy diva z klasą shadwow wiec ten shadow bedzie pozycjonowany absolutnie własnie wzgledem headera, dlatego ustawiamy position: relative*/
     position: relative;
     height: 360px;
     padding: 20px 40px;
     font-family: 'Dancing Script', cursive;
     background-image: url('/img/img-2.jpg');
-    /* teraz to zdjęcie trzeba jakos sformatowac bo jest dziwnie przesuniete pewnie ze wzgledu na parametry ktore tu wczesniej dalismy - czyli dajemy ponzsze dwa ustawienia */
     background-size: cover;
     background-position: center;
-    /* dajemy z-index 0 zeby cien byl odpowiednio wypozycjonowany */
     z-index: 0;
 }
 
 .shadow {
     position: absolute;
-    /* dajemy 100% wysokosci i szerokosci rodzica */
     width: 100%;
     height: 100%;
-    /* teraz cien sie pojawil ale wycieka poza nasz kontener wiec zeby go powrocic na miejsce to damy top 0 i left 0 */
     top: 0;
     left: 0;
-    /* czarny kolor tła i 35% przezroczystosci */
     background-color: rgba(0, 0, 0, .35);
     z-index: -1;
 }
@@ -67,7 +55,6 @@ h1 {
 .search {
     padding: 10px 20px;
     margin-bottom: 40px;
-    /* robimy 100% szerokosci rodzica */
     width: 100%;
     font-size: 16px;
     border-radius: 5px;
@@ -84,21 +71,16 @@ h2 {
 }
 
 ul {
-    /* dajemy padding pod całą ul listą */
     padding-bottom: 30px;
     font-size: 23px;
-    /* usuwamy kropki z ul listy */
     list-style: none;
 }
 
 li {
-    /* kadzy element li niech ma z gory i z dolu 8px paddingu i niech sie elementy li odsuną od lewej (i prawej) krawedzi o 30px - odsuna sie od samego tytuly ul - wiadomo */
     padding: 8px 30px;
-    /* nadajemy kreske pod kazdy elementem li o jasnym odcieniu szarosci */
     border-bottom: 1px solid rgb(226, 226, 226)
 }
 li:last-child {
-    /* usuwamy kreskę pod ostatnim elementem li */
     border-bottom: 0;
 }
 
