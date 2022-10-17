@@ -101,7 +101,3 @@ li:last-child {
     /* usuwamy kreskę pod ostatnim elementem li */
     border-bottom: 0;
 }
-
-.hide {
-    display: none
-}
