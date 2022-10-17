@@ -2,7 +2,7 @@ const search = document.querySelector('.search')
 const li = document.querySelectorAll('li')
 
 
-const filterList = () => {
+const searchEngine = () => {
     li.forEach(el => {
         const match = new RegExp(search.value, 'i').test(el.textContent) //flaga i mowi ze ingorujemy wielkosc znaków
         
@@ -14,5 +14,5 @@ const filterList = () => {
     })
 }
 
-search.addEventListener('keyup', filterList)
+search.addEventListener('keyup', searchEngine)
 
