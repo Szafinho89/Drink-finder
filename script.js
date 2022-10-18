@@ -1,18 +1,23 @@
 const search = document.querySelector('.search')
 const li = document.querySelectorAll('li')
+console.log(li);
 
+const searchEngine = (e) => {
+    let text = (e.target.value.toLowerCase());
 
-const searchEngine = () => {
     li.forEach(el => {
-        const match = new RegExp(search.value, 'i').test(el.textContent) //flaga i mowi ze ingorujemy wielkosc znaków
-        
-        if (!match) {
-            el.style.display= 'none'
+        el.classList.remove('show', 'hide')
+        if(el.textContent.toLowerCase().indexOf(text) === -1) {
+            // console.log(el.textContent);
+            el.classList.add('hide')
         } else {
-            el.style.display= 'block'
+            // console.log(el.textContent);
+            el.classList.add('show')
         }
+        // const newLi = document.getElementsByTagName('li')
+        // console.log(newLi);
     })
 }
 
-search.addEventListener('keyup', searchEngine)
 
+search.addEventListener('keyup', searchEngine)
