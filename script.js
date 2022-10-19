@@ -7,17 +7,14 @@ const searchEngine = (e) => {
 
     li.forEach(el => {
         el.classList.remove('show', 'hide')
-        if(el.textContent.toLowerCase().indexOf(text) === -1) {
-            // console.log(el.textContent);
-            el.classList.add('hide')
-        } else {
-            // console.log(el.textContent);
+
+        if(el.textContent.toLowerCase().includes(text)) {
             el.classList.add('show')
+        } else {
+            el.classList.add('hide')
         }
-        // const newLi = document.getElementsByTagName('li')
-        // console.log(newLi);
+
     })
 }
-
 
 search.addEventListener('keyup', searchEngine)
